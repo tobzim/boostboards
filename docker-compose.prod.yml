@@ -1,19 +1,16 @@
-# Production compose — used by .github/workflows/deploy.yml on the Hetzner server.
-# No code bind-mounts: the image contains everything. Only media + admin
-# accounts are persisted via named volumes so panel uploads + admin login
-# survive redeploys.
+# Production compose — consumed by .github/workflows/deploy.yml on the
+# private Hetzner server. Image is built in CI and pulled from GHCR.
 #
-# Bound to host port 8090 directly (NOT joined to the central Caddy `web`
-# network) — reachable as http://SERVER_IP:8090 once the firewall lets the
-# port through.
+# Bound to host port 8090 directly (no reverse-proxy, no domain). Reach
+# the site via http://<SERVER_IP>:8090 once the port is open in the
+# firewall. hub.cevere and atelierhubpim run untouched alongside.
 
 services:
+
   web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: boostboards/kirby:prod
+    image: ghcr.io/tobzim/boostboards:${IMAGE_TAG:-latest}
     container_name: boostboards-web
+    restart: unless-stopped
     ports:
       - "8090:80"
     volumes:
@@ -21,7 +18,6 @@ services:
       - boostboards_accounts:/var/www/html/site/accounts
     environment:
       - APACHE_LOG_LEVEL=warn
-    restart: unless-stopped
     healthcheck:
       test: ["CMD", "sh", "-c", "wget -qO- http://127.0.0.1/ > /dev/null"]
       interval: 30s

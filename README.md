@@ -63,44 +63,59 @@ boostboards-flite/
 
 Alternativ: direkt die `.txt`-Dateien unter `content/` editieren (Git-friendly).
 
-## Deployment (Hetzner)
+## Deployment (privater Hetzner-Server)
 
 Auto-Deploy aus `main` per GitHub Action: [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+Gleiches Muster wie `atelierhubpim` — GitHub-Hosted Runner baut, pusht zu GHCR, SSHt rauf, `docker compose pull` + `up`.
 
 **Architektur:**
-- Läuft als eigener Container neben `hub.cevere` auf dem gleichen Hetzner-Host
-- **Nicht** hinter der zentralen Caddy-Proxy — bindet stattdessen direkt auf `8090:80`
-- Erreichbar über `http://<HETZNER-IP>:8090`
-- Eigenes prod-Compose: [`docker-compose.prod.yml`](docker-compose.prod.yml) — kein Code-Bind-Mount, nur `media/` und `site/accounts` als Named Volumes
+- Image: `ghcr.io/tobzim/boostboards:latest` (+ `:<sha>` Tags pro Commit)
+- Bindet direkt auf Host-Port `8090` — **keine** Caddy-/Reverse-Proxy-Integration, damit `hub.cevere` und `atelierhubpim` unangetastet bleiben
+- Server-Pfad: `/opt/boostboards/`
+- Eigene Named Volumes für `media/` (Panel-Uploads, Kirby-Thumbnails) und `site/accounts` (Admin-Login)
 
-**Voraussetzungen einmalig:**
+**Einmal-Setup:**
 
-1. Self-hosted GitHub Actions Runner mit Label `hetzner` muss Zugriff auf `tobzim/boostboards` haben.
-   - Falls der existierende Runner org-scoped (Com-Credit-Con-tor) ist: einen neuen Runner für dieses Repo registrieren via
-     `Repo → Settings → Actions → Runners → New self-hosted runner` und auf dem Server einrichten.
-2. Port `8090` in der Hetzner-Firewall freigeben (Hetzner Cloud Console → Firewalls → Inbound Rule `TCP/8090` von Source `Any IPv4`).
-3. Stack-Verzeichnis: Workflow legt `/home/tobias/stacks/boostboards/` automatisch beim ersten Run an.
+1. **GitHub-Secrets** im Repo (`Settings → Secrets and variables → Actions`):
 
-**Ablauf:**
+   | Secret | Wert |
+   |---|---|
+   | `SSH_HOST` | IP oder Hostname deines Hetzner-Servers |
+   | `SSH_USER` | SSH-User (z. B. `tobias`) |
+   | `SSH_PRIVATE_KEY` | privater SSH-Key (passender public-key in `~/.ssh/authorized_keys` auf dem Server) |
+   | `SSH_PORT` | optional, Default `22` |
+
+   `GITHUB_TOKEN` wird automatisch bereitgestellt — keine Aktion nötig.
+
+2. **Server-seitig:**
+   ```bash
+   sudo mkdir -p /opt/boostboards
+   sudo chown $USER:$USER /opt/boostboards
+   ```
+
+3. **Firewall:** Port `8090/tcp` inbound öffnen (Hetzner Cloud Console → Firewalls → Inbound Rule).
+
+**Ablauf bei `git push origin main`:**
 
 ```
-git push origin main
-  → GitHub Action triggert auf [self-hosted, hetzner]
-  → rsync repo → /home/tobias/stacks/boostboards/
-  → docker compose -f docker-compose.prod.yml up -d --build
-  → curl localhost:8090 health-check
-  → docker image prune
+GitHub-Hosted Runner
+  ├─ docker build → ghcr.io/tobzim/boostboards:<sha> + :latest
+  ↓ SSH
+Privater Hetzner-Server
+  ├─ scp docker-compose.prod.yml → /opt/boostboards/
+  ├─ docker login ghcr.io (per GITHUB_TOKEN, schreibt .env mit IMAGE_TAG)
+  ├─ docker compose pull
+  ├─ docker compose up -d --remove-orphans
+  ├─ healthcheck auf 127.0.0.1:8090
+  └─ docker image prune
 ```
 
-**Zugriff nach dem Deploy:**
+**Zugriff nach Deploy:**
 
-- Frontend: `http://<HETZNER-IP>:8090`
-- Panel:    `http://<HETZNER-IP>:8090/panel` (Admin beim ersten Aufruf anlegen)
+- Frontend: `http://<SERVER_IP>:8090`
+- Panel:    `http://<SERVER_IP>:8090/panel` (Admin beim ersten Aufruf anlegen)
 
-Server-IP findest du in der Hetzner Cloud Console (laut interner Doku vermutlich `167.235.229.203`).
-
-**Manuell deployen:**
-GitHub → Actions → "Deploy to Hetzner" → "Run workflow".
+**Manuell deployen:** GitHub → Actions → "Deploy" → "Run workflow".
 
 **Produktions-Härtung (später):**
 In `site/config/config.php` `debug => false` setzen und `panel.install` entfernen, sobald der Admin-Account angelegt ist.

@@ -33,10 +33,36 @@
           <span class="product-hero__price"><?= $page->price() ?></span>
         </div>
       </div>
+      <?php $buyUrl = $page->stripe_payment_link()->value(); ?>
       <div class="product-hero__cta" data-reveal>
-        <a href="<?= page('kontakt') ? page('kontakt')->url() : '#' ?>" class="btn btn--primary btn--lg">Anfragen</a>
-        <a href="<?= page('konfigurieren') ? page('konfigurieren')->url() : '#' ?>" class="btn btn--outline btn--lg">Konfigurieren</a>
+        <?php if ($buyUrl): ?>
+          <a href="<?= esc($buyUrl) ?>" class="btn btn--primary btn--lg btn--buy" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 1v22M19 5H8.5a3.5 3.5 0 0 0 0 7H15a3.5 3.5 0 1 1 0 7H5"/>
+            </svg>
+            Jetzt kaufen
+          </a>
+          <a href="<?= page('konfigurieren') ? page('konfigurieren')->url() : '#' ?>" class="btn btn--outline btn--lg">Konfigurieren</a>
+        <?php else: ?>
+          <a href="<?= page('kontakt') ? page('kontakt')->url() : '#' ?>" class="btn btn--primary btn--lg">Anfragen</a>
+          <a href="<?= page('konfigurieren') ? page('konfigurieren')->url() : '#' ?>" class="btn btn--outline btn--lg">Konfigurieren</a>
+        <?php endif ?>
       </div>
+
+      <?php if ($buyUrl): ?>
+        <p class="product-hero__legal" data-reveal>
+          <?= $page->price_note()->or('Inkl. 19 % MwSt., zzgl. Versand. Lieferzeit ca. 4–10 Wochen.') ?>
+        </p>
+        <div class="product-hero__trust" data-reveal>
+          <span>Sichere Zahlung via Stripe</span>
+          <span class="product-hero__pay">
+            <img src="<?= url('assets/img/pay/visa.png') ?>" alt="Visa" />
+            <img src="<?= url('assets/img/pay/mastercard.png') ?>" alt="Mastercard" />
+            <img src="<?= url('assets/img/pay/paypal.png') ?>" alt="PayPal" />
+            <img src="<?= url('assets/img/pay/invoice.png') ?>" alt="SEPA / Rechnung" />
+          </span>
+        </div>
+      <?php endif ?>
     </div>
   </div>
 </section>

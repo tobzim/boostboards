@@ -49,3 +49,25 @@ fields:
     fields:
       label: { label: Bezeichnung, type: text }
       value: { label: Wert, type: text }
+
+  shop_section:
+    label: Shop & Stripe
+    type: headline
+  stripe_payment_link:
+    label: Stripe Payment Link
+    type: url
+    help: >
+      Leer lassen → CTA zeigt "Anfragen".
+      Setze einen Stripe Payment Link (https://buy.stripe.com/...) → CTA wird "Jetzt kaufen" und das Board bekommt ein "Direkt kaufen"-Badge in der Übersicht.
+  price_note:
+    label: Preis-Hinweis (Pflicht bei direktem Verkauf)
+    type: text
+    default: "Inkl. 19 % MwSt., zzgl. Versand. Lieferzeit ca. 4–10 Wochen."
+    width: 2/3
+  shipping_eu:
+    label: EU-Versand inklusive?
+    type: toggle
+    text:
+      - "Nur DE"
+      - "EU-weit"
+    width: 1/3

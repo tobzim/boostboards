@@ -120,6 +120,48 @@ Privater Hetzner-Server
 **Produktions-Härtung (später):**
 In `site/config/config.php` `debug => false` setzen und `panel.install` entfernen, sobald der Admin-Account angelegt ist.
 
+## Shop (Stripe Payment Links)
+
+Die zwei Standard-Boards (Boost Board, Boost Chill) sind über **Stripe Payment Links** direkt verkaufbar. Kein Plugin, kein Cart-System — eine URL pro Produkt, fertig.
+
+### Einmal einrichten in Stripe
+
+1. Im [Stripe Dashboard](https://dashboard.stripe.com/) → "Payment Links" → **Neuer Payment-Link**
+2. Produkt anlegen:
+   - **Name:** `BoostBoards Boost Board` (bzw. `Boost Chill`)
+   - **Preis:** 2.990 € (3.390 €), inkl. MwSt
+   - **Steuerverhalten:** "inklusive" (Endpreis)
+   - **Quantity:** "Kunde kann nicht anpassen" (eine Stückzahl pro Transaktion reicht)
+3. Auf der Link-Konfigurations-Seite:
+   - **Zahlungsmethoden:** Karte, SEPA, Klarna, PayPal aktivieren
+   - **Versandadresse erfassen:** Ja, nur DE+EU
+   - **Steuern:** Automatic Tax aktivieren (EU OSS — sonst nur deutsche MwSt)
+   - **Nach Bezahlung:** "Auf eine eigene URL umleiten" →
+     `https://178.105.42.158:8090/checkout-success` (sobald Domain da ist, hier ersetzen)
+   - **Erscheinungsbild → Erweitert → Abbruch-URL:** `https://178.105.42.158:8090/checkout-cancel`
+4. **Save** → Stripe liefert dir eine URL wie `https://buy.stripe.com/test_abc123...`
+
+### In Kirby eintragen
+
+Im Panel unter `Boards → Boost Board → Tab "Shop & Stripe"` die URL ins Feld **Stripe Payment Link** kopieren. Auf der Live-Seite:
+- Der Hero-CTA wird automatisch zu **"Jetzt kaufen"** (öffnet Stripe-Checkout in neuem Tab)
+- Das Board bekommt in der Übersicht ein grünes **"Direkt kaufen"**-Badge
+- Unter dem Preis erscheint der gesetzlich vorgeschriebene MwSt-Hinweis
+- Zahlungslogos (Visa/MC/PayPal/Rechnung) werden eingeblendet
+
+Boards **ohne** Payment-Link (Electric, Fuel, Fishing Pro — alles individuell konfiguriert) behalten den **"Anfragen"**-CTA → Customer landet auf der Kontaktseite. Passt zu eurer AGB (§4: Custom-Boards bis 10 Wochen Lieferzeit).
+
+### Was Stripe für dich macht
+
+- EU-MwSt automatisch nach OSS-Regelwerk
+- MwSt-konforme Rechnung als PDF an den Käufer (auch §14a UStG-konform)
+- Refunds, Dunning, SCA (Strong Customer Authentication)
+- Reporting für die Buchhaltung im Stripe-Dashboard
+
+### Bei Bedarf erweitern
+
+Wenn später ein echter Warenkorb mit mehreren Produkten + Zubehör nötig wird → Migration auf das [Kart-Plugin](https://kart.bnomei.com/) (Kirby 5+, ~150 €). Die Stripe-Produkte können dort übernommen werden.
+
 ## Quellen
 
 Bilder, Videos und Rechtstexte stammen von <https://boostboards.de/> — bitte vor Veröffentlichung Rechte mit Sebastian Keye klären.

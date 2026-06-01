@@ -43,3 +43,15 @@ Specs:
 -
   label: Zertifizierung
   value: CE-zertifiziert
+
+----
+
+Stripe_payment_link:
+
+----
+
+Price_note: Inkl. 19 % MwSt., zzgl. Versand. Lieferzeit ca. 4–10 Wochen.
+
+----
+
+Shipping_eu: true

@@ -24,6 +24,9 @@
                 <img class="card__img" src="<?= $img->url() ?>" alt="<?= $img->alt()->or($product->title()) ?>" loading="lazy" />
               <?php endif ?>
               <span class="card__badge<?= $isFeature ? ' card__badge--gold' : '' ?>"><?= $product->badge()->or('Boost Board') ?></span>
+              <?php if ($product->stripe_payment_link()->isNotEmpty()): ?>
+                <span class="card__buy">Direkt kaufen</span>
+              <?php endif ?>
             </div>
             <div class="card__body">
               <h3 class="card__title"><?= $product->title() ?></h3>

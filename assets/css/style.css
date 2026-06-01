@@ -433,6 +433,99 @@ section{ position:relative; padding:clamp(80px, 10vw, 140px) 0; }
 /* ====== HERO VIDEO VARIANT ====== */
 .hero--video .hero__media video{ width:100%; height:100%; object-fit:cover; }
 
+/* ====== BUY BADGE on product cards ====== */
+.card__buy{
+  position:absolute;
+  top:18px; right:18px;
+  z-index:2;
+  font-family:var(--font-display);
+  font-size:10.5px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:#0a3e1f;
+  background:#25d366;
+  padding:7px 12px;
+  border-radius:999px;
+  box-shadow:0 8px 20px rgba(37,211,102,.35);
+}
+
+/* ====== BUY BUTTON in product hero ====== */
+.btn--buy svg{ flex-shrink:0; }
+.btn--buy{
+  background:linear-gradient(135deg, #ffffff 0%, #f0f6ff 100%);
+}
+.btn--buy:hover{ background:#ffffff; transform:translateY(-2px); box-shadow:0 10px 30px rgba(0,212,255,.15); }
+
+.product-hero__legal{
+  font-size:12.5px;
+  color:var(--text-dim);
+  margin:14px 0 0;
+}
+.product-hero__trust{
+  margin-top:24px;
+  padding-top:20px;
+  border-top:1px solid var(--line);
+  display:flex; align-items:center;
+  flex-wrap:wrap; gap:14px;
+  font-family:var(--font-display);
+  font-size:11px; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--text-mute);
+}
+.product-hero__pay{ display:inline-flex; gap:8px; align-items:center; }
+.product-hero__pay img{
+  height:22px; width:auto;
+  background:#fff; padding:4px 8px;
+  border-radius:5px;
+}
+
+/* ====== CHECKOUT HEROES ====== */
+.checkout-hero{
+  position:relative;
+  padding:160px 0 120px;
+  text-align:center;
+  background:
+    radial-gradient(60% 80% at 50% 0%, rgba(0,212,255,.06), transparent 60%),
+    var(--bg);
+}
+.checkout-hero--cancel{
+  background:
+    radial-gradient(60% 80% at 50% 0%, rgba(255,255,255,.04), transparent 60%),
+    var(--bg);
+}
+.checkout-hero__inner{ max-width:640px; margin:0 auto; }
+.checkout-hero__icon{
+  display:inline-grid; place-items:center;
+  width:84px; height:84px;
+  border-radius:50%;
+  margin:0 auto 28px;
+  background:rgba(37,211,102,.12);
+  color:#25d366;
+  border:1px solid rgba(37,211,102,.4);
+  animation:checkPop .7s var(--ease) both;
+}
+.checkout-hero__icon svg{ width:42px; height:42px; }
+.checkout-hero__icon--neutral{
+  background:rgba(255,255,255,.05);
+  color:#fff;
+  border-color:var(--line-strong);
+}
+@keyframes checkPop{
+  0%   { transform:scale(.6); opacity:0; }
+  60%  { transform:scale(1.08); opacity:1; }
+  100% { transform:scale(1); }
+}
+.checkout-hero__cta{
+  margin-top:36px;
+  display:flex; gap:14px; flex-wrap:wrap;
+  justify-content:center;
+}
+.checkout-hero__hint{
+  margin-top:40px;
+  font-size:13.5px;
+  color:var(--text-mute);
+}
+.checkout-hero__hint a{ color:#fff; border-bottom:1px solid var(--line); }
+
 /* ====== SOCIAL ============================================== */
 
 /* Inline-icon base */

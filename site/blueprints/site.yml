@@ -37,6 +37,33 @@ fields:
   contact_email:
     label: E-Mail
     type: email
+  social_section:
+    label: Social Media
+    type: headline
+  social_instagram:
+    label: Instagram (Profil-URL)
+    type: url
+    width: 1/2
+  social_whatsapp:
+    label: WhatsApp (Nummer ohne + und Leerzeichen)
+    type: text
+    width: 1/2
+  social_youtube:
+    label: YouTube (Kanal-URL)
+    type: url
+    width: 1/2
+  social_facebook:
+    label: Facebook (Seiten-URL)
+    type: url
+    width: 1/2
+  social_tiktok:
+    label: TikTok (Profil-URL)
+    type: url
+    width: 1/2
+  social_linkedin:
+    label: LinkedIn (Seiten-URL)
+    type: url
+    width: 1/2
   contact_instagram:
-    label: Instagram
+    label: Instagram-Handle (Anzeige)
     type: text

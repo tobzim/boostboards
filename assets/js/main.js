@@ -10,18 +10,21 @@
     onScroll();
   }
 
-  // Mobile burger
+  // Mobile burger + body scroll-lock
   const burger = document.getElementById('navBurger');
   const menu = document.querySelector('.nav__menu');
+  const setMenu = (open) => {
+    if (!menu || !burger) return;
+    menu.classList.toggle('is-open', open);
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
+  };
   if (burger && menu) {
-    burger.addEventListener('click', () => {
-      const open = menu.classList.toggle('is-open');
-      burger.setAttribute('aria-expanded', String(open));
-    });
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-      menu.classList.remove('is-open');
-      burger.setAttribute('aria-expanded', 'false');
-    }));
+    burger.addEventListener('click', () => setMenu(!menu.classList.contains('is-open')));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+    // Close on resize past breakpoint, or Escape
+    window.addEventListener('resize', () => { if (window.innerWidth > 960) setMenu(false); });
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
   }
 
   // Reveal on scroll

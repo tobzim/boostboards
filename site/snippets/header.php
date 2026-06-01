@@ -50,9 +50,11 @@ $nav = [
       <?php foreach ($nav as $slug => $label): $p = page($slug); ?>
         <a href="<?= $p ? $p->url() : url($slug) ?>"<?= ($p && $p->isOpen()) ? ' class="is-active"' : '' ?>><?= $label ?></a>
       <?php endforeach ?>
+      <?= snippet('social', ['variant' => 'mobile']) ?>
     </nav>
 
     <div class="nav__actions">
+      <?= snippet('social', ['variant' => 'header']) ?>
       <a href="<?= page('konfigurieren') ? page('konfigurieren')->url() : '#' ?>" class="btn btn--ghost btn--sm">Konfigurieren</a>
       <a href="<?= page('boards') ? page('boards')->url() : '#' ?>" class="btn btn--primary btn--sm">Boards ansehen</a>
       <button class="nav__burger" id="navBurger" aria-label="Menü" aria-expanded="false">

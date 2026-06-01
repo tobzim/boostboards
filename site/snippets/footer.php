@@ -7,6 +7,7 @@
         <a href="tel:<?= str_replace([' ', '/'], '', $site->contact_phone()) ?>"><?= $site->contact_phone() ?></a><br/>
         <a href="mailto:<?= $site->contact_email() ?>"><?= $site->contact_email() ?></a>
       </p>
+      <?= snippet('social', ['variant' => 'footer']) ?>
     </div>
 
     <div class="footer__col">
@@ -44,6 +45,7 @@
   </div>
 </footer>
 
+<?= snippet('whatsapp-float') ?>
 <?= js('assets/js/main.js') ?>
 </body>
 </html>

@@ -191,6 +191,9 @@
   </div>
 </section>
 
+<!-- SOCIAL BAND -->
+<?= snippet('social') ?>
+
 <!-- CTA -->
 <section class="cta-band" id="kontakt-band">
   <div class="container cta-band__inner">

@@ -26,4 +26,28 @@ Contact_email: info@boostboards.de
 
 ----
 
+Social_instagram: https://www.instagram.com/boostboards/
+
+----
+
+Social_whatsapp: 491748131645
+
+----
+
+Social_youtube: https://www.youtube.com/@boostboards
+
+----
+
+Social_facebook:
+
+----
+
+Social_tiktok:
+
+----
+
+Social_linkedin:
+
+----
+
 Contact_instagram: @boostboards

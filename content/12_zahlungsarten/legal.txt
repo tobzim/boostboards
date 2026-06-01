@@ -1,0 +1,40 @@
+Title: Zahlungsarten
+
+----
+
+Headline: Zahlungsarten
+
+----
+
+Text:
+
+## Verfügbare Zahlungsmethoden
+
+<div class="pay-grid">
+  <figure class="pay-tile"><img src="/assets/img/pay/invoice.png" alt="Rechnung" /><figcaption>Rechnung</figcaption></figure>
+  <figure class="pay-tile"><img src="/assets/img/pay/paypal.png" alt="PayPal" /><figcaption>PayPal</figcaption></figure>
+  <figure class="pay-tile"><img src="/assets/img/pay/visa.png" alt="Visa" /><figcaption>Visa</figcaption></figure>
+  <figure class="pay-tile"><img src="/assets/img/pay/mastercard.png" alt="Mastercard" /><figcaption>Mastercard</figcaption></figure>
+</div>
+
+### Rechnung / Banküberweisung
+
+Du erhältst in Kürze eine Rechnung — kannst aber bereits jetzt deine Zahlung direkt auf unser Bankkonto überweisen. Die Bestell-ID dient als Zahlungsreferenz. Der Versand erfolgt erst nach Zahlungseingang.
+
+### PayPal
+
+Bequem und sicher bezahlen über PayPal. Käuferschutz inklusive.
+
+### Visa / Mastercard
+
+Kartenzahlung über den PayPal-Checkout — auch ohne PayPal-Konto möglich.
+
+## Hinweise
+
+- Alle Preise sind Endpreise in Euro inkl. gesetzlicher Mehrwertsteuer
+- Versandkosten werden ggf. zusätzlich im Bestellprozess ausgewiesen
+- Bei individuell konfigurierten Boards beträgt die Lieferzeit bis zu 10 Wochen oder mehr — siehe (link: /agb text: AGB)
+
+## Fragen?
+
+(link: mailto:info@boostboards.de text: info@boostboards.de) · +49 40 60 90 199 69

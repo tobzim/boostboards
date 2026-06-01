@@ -1,0 +1,48 @@
+Title: Über uns
+
+----
+
+Eyebrow: Hinter den Boards
+
+----
+
+Headline:
+
+Ride the Future —
+Explore Beyond.
+
+----
+
+Lede: BoostBoards ist kein gewöhnliches Produkt — es ist das Ergebnis echter Begeisterung für Wasser, Technik und das Besondere. Ein familiäres Herzensprojekt — gemacht für alle, die das Wasser lieben und echte Freiheit suchen.
+
+----
+
+Text:
+
+## Drei Gründer, eine Vision
+
+Dahinter stehen drei Gründer, die unterschiedlicher kaum sein könnten — und sich genau deshalb ideal ergänzen.
+
+### Tom
+
+Wassersportler und kreativer Kopf. Aufgewachsen in Hamburg mit Zweitwohnsitz in der dänischen Südsee. Seine Vision:
+
+„Ich wollte kein weiteres SUP bauen, sondern ein Board, das die Freiheit und Nutzungsfreundlichkeit eines SUPs mit der Power eines Motorboots verbindet."
+
+### Ralf & Sebastian
+
+Erfahrener Unternehmer und sein Sohn — sie setzen Toms Vision in die Realität um.
+
+Sebastian: „Wir haben uns als Team gefunden — mit unterschiedlichen Stärken, aber einer gemeinsamen Idee."
+
+## Zertifiziert. Geprüft. Gebaut für die Ewigkeit.
+
+Jedes Boost Board ist CE-zertifiziert. Geprüft und vermessen in der Schiffsversuchsanstalt Berlin — einer der renommiertesten europäischen Test-Einrichtungen für maritime Konstruktionen.
+
+## Made in Hamburg
+
+Entwickelt, montiert und ausgeliefert aus Hamburg-Niendorf. Persönliche Beratung. Familiäre Strukturen. Keine Massenware.
+
+----
+
+Hero_image:

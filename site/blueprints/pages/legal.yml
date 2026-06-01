@@ -1,0 +1,18 @@
+title: Rechtstext
+
+fields:
+  headline:
+    label: Headline
+    type: text
+  text:
+    label: Rechtstext
+    type: textarea
+    size: huge
+    buttons:
+      - headlines
+      - bold
+      - italic
+      - link
+      - ul
+      - ol
+      - email

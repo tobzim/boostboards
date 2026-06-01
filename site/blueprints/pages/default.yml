@@ -1,0 +1,33 @@
+title: Seite
+
+fields:
+  eyebrow:
+    label: Eyebrow
+    type: text
+  headline:
+    label: Headline
+    type: textarea
+    size: small
+  lede:
+    label: Intro / Lede
+    type: textarea
+  text:
+    label: Haupttext
+    type: textarea
+    buttons:
+      - headlines
+      - bold
+      - italic
+      - link
+      - ul
+      - ol
+      - email
+  hero_image:
+    label: Hero-Bild
+    type: files
+    template: image
+    max: 1
+  hero_video:
+    label: Hero-Video (mp4)
+    type: files
+    max: 1

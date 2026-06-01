@@ -1,0 +1,44 @@
+Title: Impressum
+
+----
+
+Headline: Impressum
+
+----
+
+Text:
+
+## Angaben gemäß § 5 TMG
+
+**Boostboards GmbH & Co. KG**
+Groten Hoff 21
+22359 Hamburg
+Deutschland
+
+## Handelsregister
+
+Handelsregister: HRA 131421
+Registergericht: Amtsgericht Hamburg
+
+## Vertretungsberechtigter
+
+Sebastian Keye
+
+## Kontakt
+
+- Telefon: (link: tel:+4940609019969 text: +49 40 60 90 199 69)
+- Mobil: (link: tel:+491748131645 text: +49 174 8131645)
+- E-Mail: (link: mailto:info@boostboards.de text: info@boostboards.de)
+
+## Umsatzsteuer-Identifikationsnummer
+
+Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: DE442130574
+
+## Verbraucherstreitbeilegung / Universalschlichtungsstelle
+
+Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+
+## EU-Streitschlichtung
+
+Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: (link: https://ec.europa.eu/consumers/odr/ text: https://ec.europa.eu/consumers/odr/ popup: yes).
+Unsere E-Mail-Adresse finden Sie oben im Impressum.

@@ -1,0 +1,40 @@
+Title: Widerruf
+
+----
+
+Headline: Widerrufsbelehrung & -formular
+
+----
+
+Text:
+
+## Widerrufsrecht
+
+Verbrauchern steht ein gesetzliches Widerrufsrecht zu. Hier können Verträge unter Einhaltung der Widerrufsfrist widerrufen werden.
+
+## Vom Widerrufsrecht ausgeschlossen
+
+Vom Widerrufsrecht ausgeschlossen sind insbesondere:
+
+- Waren, die nach Kundenspezifikation angefertigt oder eindeutig auf die persönlichen Bedürfnisse zugeschnitten sind (z. B. individuell konfigurierte Boards)
+- Hygieneartikel oder versiegelte Waren mit entfernter Versiegelung
+- Produkte, die untrennbar mit anderen Gütern vermischt wurden
+
+## Widerruf erklären
+
+Den Widerruf erklärst du am einfachsten per E-Mail an (link: mailto:info@boostboards.de text: info@boostboards.de). Bitte gib dabei an:
+
+- Bestellnummer
+- Vor- und Nachname
+- E-Mail-Adresse, mit der bestellt wurde
+- Kurze Erklärung, dass du den Vertrag widerrufst
+
+Für die Rückabwicklung erhältst du anschließend von uns die Rücksendeadresse und die Erstattungs-Modalitäten.
+
+## Kontakt
+
+**Boostboards GmbH & Co. KG**
+Groten Hoff 21
+22359 Hamburg
+info@boostboards.de
++49 40 60 90 199 69

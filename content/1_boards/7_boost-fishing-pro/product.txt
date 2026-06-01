@@ -1,0 +1,50 @@
+Title: Boost Fishing Pro
+
+----
+
+Badge: Limited — Felix Pinedo Edition
+
+----
+
+Short: Das ultimative Angel-Equipment inspiriert von Felix Pinedo: „Dieses Board ist eine Waffe!"
+
+----
+
+Description: Die Limited Edition. Entwickelt in enger Zusammenarbeit mit Profi-Angler Felix Pinedo. Das Boost Fishing Pro ist ausgestattet bis ins letzte Detail: Rutenhalter, LiveScope-Mount, Tackle-Storage, leiser E-Motor für die Pirsch und Verbrenner für schnelle Spot-Wechsel. Signiert. Limitiert. Kompromisslos.
+
+Felix Pinedo: „Das beste und flexibelste Angel-Boot-Setup, das ich mir vorstellen kann."
+
+----
+
+Price: €14.190
+
+----
+
+Motor: electric
+
+----
+
+Power: Dual-Drive (E + Verbrenner)
+
+----
+
+Specs:
+
+-
+  label: Edition
+  value: Limited, signiert von Felix Pinedo
+-
+  label: Antrieb
+  value: Dual-Setup (E-Motor + Verbrenner)
+-
+  label: Angel-Ausstattung
+  value: Rutenhalter, LiveScope-Mount, Tackle-Storage
+-
+  label: Rumpf
+  value: Katamaran, GFK
+-
+  label: Gewicht
+  value: ca. 39 kg (Board)
+-
+  label: Zertifizierung
+  value: CE-zertifiziert

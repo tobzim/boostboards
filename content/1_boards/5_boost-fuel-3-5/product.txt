@@ -1,0 +1,48 @@
+Title: Boost Fuel 3.5
+
+----
+
+Badge: Fuel
+
+----
+
+Short: Der einfach zu bedienende 3,5 PS Motor garantiert eine Menge Spaß.
+
+----
+
+Description: Der Allrounder. Der 3,5 PS 4-Takter ist robust, effizient und einfach zu bedienen — ideal für alle, die viel Reichweite ohne Ladeinfrastruktur wollen. Perfekt für Touren, Familienausflüge und schnelle Spot-Wechsel.
+
+----
+
+Price: ab €5.290
+
+----
+
+Motor: fuel
+
+----
+
+Power: 3,5 PS
+
+----
+
+Specs:
+
+-
+  label: Antrieb
+  value: 4-Takt-Verbrenner
+-
+  label: Leistung
+  value: 3,5 PS
+-
+  label: Reichweite
+  value: Tankabhängig, hoch
+-
+  label: Rumpf
+  value: Katamaran, GFK
+-
+  label: Gewicht
+  value: ca. 39 kg (Board)
+-
+  label: Zertifizierung
+  value: CE-zertifiziert

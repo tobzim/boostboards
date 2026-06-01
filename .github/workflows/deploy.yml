@@ -1,0 +1,61 @@
+name: Deploy to Hetzner
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Cancel an in-flight deploy if a newer commit lands on main.
+concurrency:
+  group: deploy-hetzner
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, hetzner]
+    env:
+      STACK_DIR: /home/tobias/stacks/boostboards
+      COMPOSE_FILE: docker-compose.prod.yml
+      HOST_PORT: "8090"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Sync project into stack directory
+        run: |
+          set -euo pipefail
+          mkdir -p "$STACK_DIR"
+          rsync -a --delete \
+            --exclude='.git' \
+            --exclude='.github' \
+            --exclude='media' \
+            --exclude='site/accounts' \
+            --exclude='site/cache' \
+            --exclude='site/sessions' \
+            ./ "$STACK_DIR/"
+
+      - name: Build & start container
+        working-directory: ${{ env.STACK_DIR }}
+        run: |
+          set -euo pipefail
+          docker compose -f "$COMPOSE_FILE" pull --ignore-buildable 2>/dev/null || true
+          docker compose -f "$COMPOSE_FILE" up -d --build --remove-orphans
+
+      - name: Wait for health
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 30); do
+            if curl -fsS "http://localhost:${HOST_PORT}/" > /dev/null; then
+              echo "BoostBoards is live on port ${HOST_PORT}"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Healthcheck failed after 60s"
+          docker compose -f "${STACK_DIR}/${COMPOSE_FILE}" logs --tail=80 web
+          exit 1
+
+      - name: Prune dangling images
+        if: success()
+        run: docker image prune -f

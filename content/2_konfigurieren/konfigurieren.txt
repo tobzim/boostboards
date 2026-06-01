@@ -1,0 +1,40 @@
+Title: Konfigurieren — so geht's
+
+----
+
+Eyebrow: Konfigurator
+
+----
+
+Headline:
+
+Dein Board.
+Auf den Millimeter.
+
+----
+
+Lede: Modular & individuell — jedes BoostBoard wird nach deinen Wünschen konfiguriert. Konfiguriere dein Board nach deinen Wünschen oder lass dich von Tom persönlich beraten.
+
+----
+
+Text:
+
+## In vier Schritten zu deinem Board
+
+(text: Wir bauen jedes Board on demand. Du gibst uns die Eckdaten, wir liefern dein BoostBoard fertig montiert, eingestellt und probegefahren aus.)
+
+### 01 — Hull & Design
+Wähle Farbe und Pad-Design deines GFK-Katamaran-Rumpfs. Jedes Board ist ein Unikat.
+
+### 02 — Antrieb
+Paddle, Electric oder Fuel — du wählst, wann du was brauchst. Antriebe sind später nachrüstbar dank Rail-Mount-System.
+
+### 03 — Setup
+Sitz, Lounge oder Stand-Setup. Cooler, Picknick-Plattform, Familien-Bench — die Schienen halten alles.
+
+### 04 — Module
+Rail-Module für Angler (Rutenhalter, LiveScope), Diver (Equipment-Mount) oder Family (Kindersitz, Sicherheits-Grips).
+
+----
+
+Hero_image:

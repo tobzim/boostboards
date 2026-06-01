@@ -1,0 +1,22 @@
+Title: Seite nicht gefunden
+
+----
+
+Eyebrow: 404
+
+----
+
+Headline:
+
+Diese Welle
+hat uns verfehlt.
+
+----
+
+Lede: Die angefragte Seite gibt es nicht (mehr). Aber das nächste Abenteuer ist nur einen Klick entfernt.
+
+----
+
+Text:
+
+(link: / text: Zurück zur Startseite) · (link: /boards text: Boards ansehen) · (link: /kontakt text: Kontakt)

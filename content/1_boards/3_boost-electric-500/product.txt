@@ -1,0 +1,48 @@
+Title: Boost Electric 500
+
+----
+
+Badge: Electric
+
+----
+
+Short: Schon mit unserem kleinen 500 Watt E-Motor ist Fahrspaß garantiert.
+
+----
+
+Description: Lautlos, sauber, sofort am Punkt. Der 500-Watt-Elektroantrieb macht das Boost Electric 500 zum perfekten Begleiter für ruhige Gewässer, Naturschutzgebiete und alle, die das Erlebnis Wasser ohne Lärm und Abgase suchen. Reichweite und Leistung perfekt abgestimmt auf den Hull.
+
+----
+
+Price: ab €5.390
+
+----
+
+Motor: electric
+
+----
+
+Power: 500 W
+
+----
+
+Specs:
+
+-
+  label: Antrieb
+  value: Elektromotor
+-
+  label: Leistung
+  value: 500 Watt
+-
+  label: Geräusch
+  value: Lautlos
+-
+  label: Rumpf
+  value: Katamaran, GFK
+-
+  label: Gewicht
+  value: ca. 39 kg (ohne Akku)
+-
+  label: Zertifizierung
+  value: CE-zertifiziert

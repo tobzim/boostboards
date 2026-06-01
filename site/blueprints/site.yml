@@ -1,0 +1,42 @@
+title: BoostBoards
+
+options:
+  changeTitle: true
+
+pages:
+  type: pages
+  layout: cards
+  template:
+    - default
+    - legal
+    - boards
+    - product
+
+fields:
+  title:
+    label: Site-Titel
+    type: text
+  tagline:
+    label: Tagline
+    type: text
+  logo:
+    label: Logo
+    type: files
+    template: image
+    max: 1
+  contact_address:
+    label: Adresse
+    type: textarea
+    size: small
+  contact_phone:
+    label: Telefon
+    type: text
+  contact_mobile:
+    label: Mobil / WhatsApp
+    type: text
+  contact_email:
+    label: E-Mail
+    type: email
+  contact_instagram:
+    label: Instagram
+    type: text

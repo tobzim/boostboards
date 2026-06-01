@@ -1,0 +1,103 @@
+title: Startseite
+preset: page
+
+tabs:
+  hero:
+    label: Hero
+    icon: image
+    fields:
+      hero_eyebrow:
+        label: Eyebrow
+        type: text
+      hero_title:
+        label: Titel
+        type: textarea
+        size: small
+      hero_sub:
+        label: Subtitle
+        type: textarea
+        size: small
+      hero_image:
+        label: Hero-Bild
+        type: files
+        template: image
+        max: 1
+      hero_video:
+        label: Hero-Video (optional, mp4)
+        type: files
+        max: 1
+
+  intro:
+    label: Lerne
+    icon: text
+    fields:
+      learn_eyebrow:
+        type: text
+        label: Eyebrow
+      learn_title:
+        type: textarea
+        size: small
+        label: Titel
+      learn_text:
+        type: textarea
+        label: Text
+
+  local:
+    label: Showroom
+    icon: pin
+    fields:
+      local_eyebrow:
+        type: text
+      local_title:
+        type: textarea
+        size: small
+      local_text:
+        type: textarea
+
+  innovation:
+    label: Innovation
+    icon: bolt
+    fields:
+      innovation_title:
+        type: textarea
+        size: small
+      features:
+        label: Features
+        type: structure
+        fields:
+          number: { label: Nr., type: text }
+          title:  { label: Titel, type: text }
+          text:   { label: Text, type: textarea }
+
+  quotes:
+    label: Stimmen
+    icon: quote
+    fields:
+      quotes:
+        label: Testimonials
+        type: structure
+        fields:
+          quote:  { label: Zitat, type: textarea }
+          author: { label: Autor, type: text }
+
+  stats:
+    label: Zahlen
+    icon: chart
+    fields:
+      stats_title:
+        type: textarea
+        size: small
+      stats:
+        label: Zahlen
+        type: structure
+        fields:
+          value:  { label: Wert, type: number }
+          suffix: { label: Suffix, type: text, width: 1/4 }
+          label:  { label: Label, type: text }
+
+  seo:
+    label: SEO
+    icon: search
+    fields:
+      seo_description:
+        type: textarea

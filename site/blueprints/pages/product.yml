@@ -1,0 +1,51 @@
+title: Produkt
+
+fields:
+  badge:
+    label: Badge
+    type: text
+  short:
+    label: Kurzbeschreibung (Kachel)
+    type: textarea
+    size: small
+  description:
+    label: Volle Beschreibung
+    type: textarea
+    buttons:
+      - headlines
+      - bold
+      - italic
+      - link
+      - ul
+      - ol
+  price:
+    label: Preis
+    type: text
+    width: 1/3
+  motor:
+    label: Antrieb
+    type: select
+    width: 1/3
+    options:
+      paddle: Paddle
+      electric: Electric
+      fuel: Fuel
+  power:
+    label: Leistung
+    type: text
+    width: 1/3
+  image:
+    label: Produktbild
+    type: files
+    template: image
+    max: 1
+  gallery:
+    label: Galerie
+    type: files
+    template: image
+  specs:
+    label: Technische Daten
+    type: structure
+    fields:
+      label: { label: Bezeichnung, type: text }
+      value: { label: Wert, type: text }

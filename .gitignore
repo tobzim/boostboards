@@ -1,0 +1,9 @@
+/vendor
+/media
+/site/accounts
+/site/cache
+/site/sessions
+/.env
+*.log
+.DS_Store
+Thumbs.db

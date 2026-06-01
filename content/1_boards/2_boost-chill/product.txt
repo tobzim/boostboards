@@ -1,0 +1,45 @@
+Title: Boost Chill
+
+----
+
+Badge: Bestseller
+
+----
+
+Short: Ein sehr gut ausgestattetes BoostBoard mit dem wichtigsten Zubehör.
+
+----
+
+Description: Unser Bestseller. Das Boost Chill kommt vorausgestattet mit dem wichtigsten Zubehör — von Paddel über Sitz-Modul bis Transportbag. Auspacken, aufladen, los. Ideal für alle, die nicht erst lange konfigurieren wollen, sondern direkt aufs Wasser möchten.
+
+----
+
+Price: ab €3.390
+
+----
+
+Motor: paddle
+
+----
+
+Power: —
+
+----
+
+Specs:
+
+-
+  label: Antrieb
+  value: Paddle, Motor nachrüstbar
+-
+  label: Lieferumfang
+  value: Board, Paddel, Sitz, Transportbag
+-
+  label: Rumpf
+  value: Katamaran, GFK
+-
+  label: Gewicht
+  value: ca. 39 kg
+-
+  label: Zertifizierung
+  value: CE-zertifiziert

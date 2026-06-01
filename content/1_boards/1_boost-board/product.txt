@@ -1,0 +1,45 @@
+Title: Boost Board
+
+----
+
+Badge: Paddle
+
+----
+
+Short: Unsere Basisvariante, die Du Dir mit viel Zubehör individuell erweitern kannst.
+
+----
+
+Description: Der Einstieg in die BoostBoard-Welt. Das Boost Board ist die pure Paddle-Variante mit allen Genen unserer modularen Plattform — extrem kippstabil dank Katamaran-Rumpf, ausgestattet mit dem durchgehenden Rail-Mount-System für späteres Aufrüsten. Egal ob du klassisch paddelst, später einen E-Motor nachrüstest oder die Angel-Module ergänzt: Dieses Board wächst mit dir.
+
+----
+
+Price: ab €2.990
+
+----
+
+Motor: paddle
+
+----
+
+Power: —
+
+----
+
+Specs:
+
+-
+  label: Antrieb
+  value: Paddle (nachrüstbar)
+-
+  label: Rumpf
+  value: Katamaran, GFK
+-
+  label: Gewicht
+  value: ca. 39 kg
+-
+  label: Tragkraft
+  value: bis 250 kg
+-
+  label: Zertifizierung
+  value: CE-zertifiziert

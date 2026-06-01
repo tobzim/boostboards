@@ -1,0 +1,71 @@
+Title: Datenschutz
+
+----
+
+Headline: Datenschutzerklärung
+
+----
+
+Text:
+
+## 1. Datenschutz auf einen Blick
+
+### Allgemeine Hinweise
+
+Diese Seite erfasst personenbezogene Daten automatisch beim Besuch. Daten entstehen durch Nutzereingaben (Kontaktformulare) und technische Erfassung (Browser, Betriebssystem, IP-Adressen). Der Betreiber nutzt diese Informationen zur Website-Funktionalität und Vertragsabwicklung.
+
+### Verantwortliche Stelle
+
+Boostboards GmbH & Co. KG
+Groten Hoff 21
+22359 Hamburg
+Telefon: +49 40 60 90 199 69
+E-Mail: info@boostboards.de
+
+### Nutzerrechte
+
+Auskunft, Berichtigung, Löschung, Datenportabilität und Widerspruch sind jederzeit möglich. Du kannst diese Rechte jederzeit unter den oben angegebenen Kontaktdaten geltend machen.
+
+## 2. Hosting
+
+Die Website wird bei All-Inkl gehostet (ALL-INKL.COM – Neue Medien Münnich). Ein Auftragsverarbeitungsvertrag regelt die DSGVO-konforme Datenbehandlung.
+
+## 3. Datenerfassung auf dieser Website
+
+### Cookies
+
+Session- und permanente Cookies werden für Funktionalität (Warenkorbfunktion, Authentifizierung) gespeichert. Nutzer können dies im Browser konfigurieren oder Cookies löschen.
+
+### Server-Logs
+
+Browser-Typ, Betriebssystem, IP-Adresse werden automatisch erfasst. Diese Daten werden zur Sicherstellung des Betriebs verwendet und nicht mit anderen Datenquellen zusammengeführt.
+
+### Kontaktformulare & E-Mail
+
+Anfragedaten werden gespeichert bis eine Löschaufforderung erfolgt. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).
+
+### WhatsApp
+
+Die Kommunikation ist Ende-zu-Ende-verschlüsselt; Meta erhält Metadaten. Meta Platforms ist DPF-zertifiziert (Data Privacy Framework).
+
+## 4. Newsletter
+
+E-Mail-Adressen werden nur mit Einwilligung (Art. 6 Abs. 1 lit. a DSGVO) gespeichert. Der Austrag ist jederzeit möglich; eine Blacklist verhindert Remails.
+
+## 5. Externe Tools
+
+### Google Fonts
+
+Wir hosten Google Fonts lokal, es findet keine Serververbindung zu Google statt.
+
+### Wordfence
+
+Cybersecurity-Tool mit Standardvertragsklauseln für USA-Transfers. Wordfence schützt die Website vor Angriffen.
+
+## 6. Zahlungsdienste
+
+PayPal verarbeitet Zahlungsdaten. Datenübermittlung an Versand- und Zahlungsdienstleister erfolgt nur im erforderlichen Umfang (Art. 6 Abs. 1 lit. b DSGVO).
+
+----
+
+Hero_image:

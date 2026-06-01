@@ -1,0 +1,26 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: boostboards/kirby:latest
+    container_name: boostboards-web
+    ports:
+      - "8080:80"
+    volumes:
+      # Live-edit during development: mount source over the image
+      - ./assets:/var/www/html/assets
+      - ./content:/var/www/html/content
+      - ./site:/var/www/html/site
+      - ./index.php:/var/www/html/index.php
+      - ./.htaccess:/var/www/html/.htaccess
+      # Persist user uploads + auto-generated thumbnails
+      - kirby_media:/var/www/html/media
+      - kirby_accounts:/var/www/html/site/accounts
+    environment:
+      - APACHE_LOG_LEVEL=warn
+    restart: unless-stopped
+
+volumes:
+  kirby_media:
+  kirby_accounts:

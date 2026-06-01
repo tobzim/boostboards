@@ -1,0 +1,53 @@
+Title: Barrierefreiheit
+
+----
+
+Headline: Erklärung zur Barrierefreiheit
+
+----
+
+Text:
+
+## Erklärung zur Barrierefreiheit für Dienstleistungen
+
+Im Rahmen dieser Erklärung wird ein Überblick über die Vereinbarkeit der Dienstleistungen mit den Anforderungen der Barrierefreiheit nach gesetzlichen Vorschriften (insbesondere dem Barrierefreiheitsstärkungsgesetz – BFSG) gegeben.
+
+## Dienstleistungserbringer
+
+**Boostboards GmbH & Co. KG**
+Groten Hoff 21
+22359 Hamburg
+
+## Dienstleistungsbeschreibung
+
+Informationen zum Sortiment und Online-Shop unter (link: https://boostboards.de/ text: https://boostboards.de/).
+
+## Durchführung
+
+Die Website bietet Sortimentsinformationen, einen Online-Shop zum Artikelkauf, ein Kontaktformular und eine Newsletter-Anmeldung.
+
+## Vereinbarkeitsstatus
+
+Die Dienstleistung ist **teilweise** mit dem Barrierefreiheitsstärkungsgesetz (BFSG) vereinbar.
+
+## Nicht barrierefreie Bereiche
+
+- Webshop-Bedienbarkeit
+- Fehlende Untertitel bei Videos
+- Eingeschränkte Tastaturbedienbarkeit
+- Hierarchische HTML-Headline-Struktur unvollständig
+- Fehlende Skip-to-Content-Funktion
+
+## Unverhältnismäßige Belastung
+
+Als kleines Unternehmen mit begrenzten Ressourcen und ohne eigene IT-Abteilung würden umfassende Umsetzung barrierefreier Anpassungen erhebliche externe Aufwände und Investitionen erfordern.
+
+## Kontakt bei Barrieren
+
+- E-Mail: (link: mailto:info@boostboards.de text: info@boostboards.de)
+- Telefon: +49 40 60 90 199 69
+
+## Datum
+
+Erstellungsdatum: 27.08.2025
+Letzte Überprüfung: 24.06.2025

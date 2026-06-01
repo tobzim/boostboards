@@ -1,0 +1,37 @@
+Title: Kontakt
+
+----
+
+Eyebrow: Sprich mit uns
+
+----
+
+Headline: BoostBoards — Einfach anfragen.
+
+----
+
+Lede: Persönliche Beratung von Mensch zu Mensch. Per Telefon, WhatsApp, Mail — oder direkt im Showroom Hamburg.
+
+----
+
+Text:
+
+## So erreichst du uns
+
+**Boostboards GmbH & Co. KG**
+Groten Hoff 21
+22359 Hamburg
+Deutschland
+
+- Telefon: (link: tel:+4940609019969 text: +49 40 60 90 199 69)
+- WhatsApp / Mobil: (link: tel:+491748131645 text: +49 174 8131645)
+- E-Mail: (link: mailto:info@boostboards.de text: info@boostboards.de)
+- Instagram: @boostboards
+
+## Showroom
+
+Vor-Ort-Termine nach Vereinbarung. Wir freuen uns auf dich.
+
+----
+
+Hero_image:

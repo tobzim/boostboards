@@ -1,0 +1,123 @@
+Title: Startseite
+
+----
+
+Hero_eyebrow: Series 2026 — Made in Hamburg
+
+----
+
+Hero_title:
+
+Gebaut für
+jedes Wasser.
+
+----
+
+Hero_sub:
+
+SUP-Freiheit trifft Motor-Power. Ein Board.
+Unendliche Möglichkeiten — auf See, Fluss und Meer.
+
+----
+
+Learn_eyebrow: Lerne BoostBoarding
+
+----
+
+Learn_title:
+
+In Sekunden startklar.
+Vom ersten Meter an.
+
+----
+
+Learn_text: Vereinbare eine persönliche Testfahrt in Hamburg oder einem unserer Partnerstützpunkte. Wir zeigen dir Setup, Trimmung und Motor-Handling — bis du dich auf dem Wasser zuhause fühlst.
+
+----
+
+Local_eyebrow: Shop Local
+
+----
+
+Local_title:
+
+Hamburg.
+Und weit darüber hinaus.
+
+----
+
+Local_text: Hauptsitz und Showroom in Hamburg-Niendorf. Auslieferung deutschlandweit und in die EU. Persönliche Beratung — telefonisch, per WhatsApp oder vor Ort.
+
+----
+
+Innovation_title:
+
+Eine Plattform.
+Vier Stellschrauben.
+
+----
+
+Features:
+
+-
+  number: "01"
+  title: Katamaran-Rumpf
+  text: Doppelbug-Geometrie für die wohl höchste Kippstabilität ihrer Klasse — egal ob solo, zu zweit oder mit Kind.
+-
+  number: "02"
+  title: Rail-Mount-System
+  text: Durchgehende Schienen für Motor, Sitz, Kühlbox, Rutenhalter und Diving-Equipment. Du baust dein Board.
+-
+  number: "03"
+  title: Leicht & transportabel
+  text: Nur 39 kg Eigengewicht. In Sekunden aufs Dach — kein Trailer nötig.
+-
+  number: "04"
+  title: Modulare Antriebe
+  text: Paddle, Electric, Fuel — ein Hull-Format, drei Antriebswelten. Du wählst, wann du was brauchst.
+
+----
+
+Quotes:
+
+-
+  quote: Ich war skeptisch — bis ich draufstand. Stabilität, die man nicht für möglich hält.
+  author: M. Brauer, Hamburg
+-
+  quote: Wir fahren zu viert raus, Kühlbox an Bord. Ein einziges Board — und der ganze Tag passt drauf.
+  author: Familie Wendt, Plön
+-
+  quote: Lautlos an die besten Spots, leise auswerfen. Der Fishing Pro hat mein Angeln verändert.
+  author: Felix Pinedo
+
+----
+
+Stats_title:
+
+Vom Hamburger Hafen
+auf die Wasser Europas.
+
+----
+
+Stats:
+
+-
+  value: 2400
+  suffix: ""
+  label: Boards auf dem Wasser
+-
+  value: 14
+  suffix: ""
+  label: Länder weltweit
+-
+  value: 98
+  suffix: "%"
+  label: Weiterempfehlungsrate
+-
+  value: 7
+  suffix: ""
+  label: Modelle im Lineup
+
+----
+
+Seo_description: BoostBoards — SUP-Freiheit trifft Motor-Power. Modulare Premium-Boards aus Hamburg, made for every water.

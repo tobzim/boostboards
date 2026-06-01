@@ -1,0 +1,19 @@
+title: Boards-Übersicht
+
+fields:
+  eyebrow:
+    type: text
+  headline:
+    type: textarea
+    size: small
+  lede:
+    type: textarea
+
+sections:
+  products:
+    headline: Modelle
+    type: pages
+    template: product
+    create: product
+    info: "{{ page.price }}"
+    layout: cards

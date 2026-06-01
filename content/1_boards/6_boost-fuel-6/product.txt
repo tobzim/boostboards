@@ -1,0 +1,48 @@
+Title: Boost Fuel 6
+
+----
+
+Badge: Fuel Pro
+
+----
+
+Short: Mit dem 6 PS Motor hast Du die maximale BoostBoard Leistung.
+
+----
+
+Description: Maximum Performance. Mit dem 6-PS-Außenborder holst du die volle Leistung aus deinem Boost Board heraus — ohne Bootsführerschein in Deutschland (innerhalb der gesetzlichen Grenzen). Für Touren, Familien und alle, die mehr wollen.
+
+----
+
+Price: ab €5.790
+
+----
+
+Motor: fuel
+
+----
+
+Power: 6 PS
+
+----
+
+Specs:
+
+-
+  label: Antrieb
+  value: 4-Takt-Verbrenner
+-
+  label: Leistung
+  value: 6 PS
+-
+  label: Reichweite
+  value: Tankabhängig, sehr hoch
+-
+  label: Rumpf
+  value: Katamaran, GFK
+-
+  label: Gewicht
+  value: ca. 39 kg (Board)
+-
+  label: Zertifizierung
+  value: CE-zertifiziert

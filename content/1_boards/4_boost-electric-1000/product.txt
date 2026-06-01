@@ -1,0 +1,48 @@
+Title: Boost Electric 1000
+
+----
+
+Badge: Electric Pro
+
+----
+
+Short: Unser großer E-Motor hat 1.273 Watt und bietet Dir die volle elektrische Power.
+
+----
+
+Description: Mehr Reichweite, mehr Speed, mehr Freiheit. Mit 1.273 Watt liefert das Boost Electric 1000 die volle elektrische Power — ohne dabei den lautlosen Charakter zu verlieren. Für Wassersportler, die elektrisch fahren wollen, aber keine Kompromisse beim Vortrieb eingehen möchten.
+
+----
+
+Price: ab €6.490
+
+----
+
+Motor: electric
+
+----
+
+Power: 1.273 W
+
+----
+
+Specs:
+
+-
+  label: Antrieb
+  value: Elektromotor
+-
+  label: Leistung
+  value: 1.273 Watt
+-
+  label: Geräusch
+  value: Lautlos
+-
+  label: Rumpf
+  value: Katamaran, GFK
+-
+  label: Gewicht
+  value: ca. 39 kg (ohne Akku)
+-
+  label: Zertifizierung
+  value: CE-zertifiziert

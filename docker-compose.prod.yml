@@ -1,0 +1,34 @@
+# Production compose — used by .github/workflows/deploy.yml on the Hetzner server.
+# No code bind-mounts: the image contains everything. Only media + admin
+# accounts are persisted via named volumes so panel uploads + admin login
+# survive redeploys.
+#
+# Bound to host port 8090 directly (NOT joined to the central Caddy `web`
+# network) — reachable as http://SERVER_IP:8090 once the firewall lets the
+# port through.
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: boostboards/kirby:prod
+    container_name: boostboards-web
+    ports:
+      - "8090:80"
+    volumes:
+      - boostboards_media:/var/www/html/media
+      - boostboards_accounts:/var/www/html/site/accounts
+    environment:
+      - APACHE_LOG_LEVEL=warn
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "sh", "-c", "wget -qO- http://127.0.0.1/ > /dev/null"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+
+volumes:
+  boostboards_media:
+  boostboards_accounts:

@@ -6,11 +6,7 @@ options:
 pages:
   type: pages
   layout: cards
-  template:
-    - default
-    - legal
-    - boards
-    - product
+  info: "{{ page.template.name }}"
 
 fields:
   title:

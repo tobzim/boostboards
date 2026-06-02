@@ -124,12 +124,13 @@ button{ font:inherit; cursor:pointer; }
   .nav{ padding:14px 0; }
   .nav.is-scrolled{ padding:10px 0; }
   .nav__logo-img{ height:30px; }
+
   .nav__menu{
-    position:fixed;
-    /* Anchor to the bottom of the nav so the menu drops cleanly below it,
-       independent of nav scroll-state padding. */
+    /* IMPORTANT: position:absolute (not fixed) so top:100% means "directly
+       below the .nav element" instead of "100% viewport height down". */
+    position:absolute;
     top:100%; left:0; right:0;
-    max-height:calc(100dvh - 56px);
+    max-height:calc(100dvh - 60px);
     flex-direction:column; gap:0;
     padding:8px var(--pad-x) 32px;
     background:rgba(10,10,12,.97);
@@ -142,7 +143,10 @@ button{ font:inherit; cursor:pointer; }
     overscroll-behavior:contain;
   }
   .nav__menu.is-open{ transform:translateY(0); }
-  .nav__menu a{
+
+  /* Only direct child <a>s of the menu are styled like menu links.
+     This prevents bleeding into nested .social-icon links. */
+  .nav__menu > a{
     padding:18px 4px;
     border-bottom:1px solid var(--line);
     font-size:17px;
@@ -150,16 +154,21 @@ button{ font:inherit; cursor:pointer; }
     min-height:48px;
     display:flex; align-items:center;
   }
-  .nav__menu a::after{ display:none; }
+  .nav__menu > a::after{ display:none; }
+
   .nav__burger{ display:inline-block; }
   .nav__actions .btn--ghost{ display:none; }
-  .nav__actions .btn--sm{ padding:9px 14px; font-size:11px; }
+  .nav__actions .btn--sm{ padding:9px 14px; font-size:11.5px; letter-spacing:.1em; }
 
   /* Lock background scroll while mobile menu is open (toggled via JS) */
   body.menu-open{ overflow:hidden; }
 }
-@media (max-width:520px){
-  /* Tiny screens: keep only burger + logo, hide the "Shop" pill */
+@media (max-width:600px){
+  /* Hide the IG header icon already at 600px to give the burger room */
+  .social-icon--header{ display:none; }
+}
+@media (max-width:430px){
+  /* Tiny screens: only logo + burger, hide the "Boards ansehen" pill */
   .nav__actions .btn--sm{ display:none; }
 }
 
@@ -708,11 +717,77 @@ section{ position:relative; padding:clamp(80px, 10vw, 140px) 0; }
 
 .social-row{ display:flex; gap:10px; flex-wrap:wrap; }
 .social-row--footer{ margin-top:22px; }
+
+/* Mobile-Menu Social block ---------------------------------------- */
 .social-row--mobile{
-  margin-top:24px;
-  padding-top:24px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(72px, 1fr));
+  gap:10px;
+  margin:28px 0 8px;
+  padding:24px 0 8px;
   border-top:1px solid var(--line);
-  justify-content:center;
+  position:relative;
+}
+.social-row--mobile::before{
+  content:"Folg uns";
+  position:absolute;
+  top:-9px; left:0;
+  padding:0 10px 0 0;
+  background:rgba(10,10,12,1);
+  font-family:var(--font-display);
+  font-size:11px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+}
+.social-row--mobile .social-icon{
+  /* Override the default circle so each tile is a proper big touch target
+     with a label below the icon. */
+  width:auto; height:auto;
+  aspect-ratio:1/1;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+  color:#fff;
+  flex-direction:column;
+  gap:6px;
+  padding:14px 4px 12px;
+  min-height:72px;
+  position:relative;
+  transition:transform .25s var(--ease), border-color .25s var(--ease), background-color .25s var(--ease);
+}
+.social-row--mobile .social-icon::after{
+  content:attr(aria-label);
+  font-family:var(--font-display);
+  font-size:10px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--text-mute);
+}
+.social-row--mobile .social-icon svg{ width:22px; height:22px; }
+.social-row--mobile .social-icon:hover,
+.social-row--mobile .social-icon:active{
+  transform:translateY(-2px);
+  border-color:rgba(255,255,255,.4);
+  background:rgba(255,255,255,.06);
+}
+.social-row--mobile .social-icon:hover::after,
+.social-row--mobile .social-icon:active::after{ color:#fff; }
+/* Brand tints on hover/active */
+.social-row--mobile .social-icon[aria-label="Instagram"]:hover,
+.social-row--mobile .social-icon[aria-label="Instagram"]:active{
+  background:linear-gradient(135deg, rgba(225,48,108,.18), rgba(252,176,69,.10));
+  border-color:rgba(225,48,108,.55);
+}
+.social-row--mobile .social-icon[aria-label="WhatsApp"]:hover,
+.social-row--mobile .social-icon[aria-label="WhatsApp"]:active{
+  background:linear-gradient(135deg, rgba(37,211,102,.20), rgba(37,211,102,.05));
+  border-color:rgba(37,211,102,.6);
+}
+.social-row--mobile .social-icon[aria-label="YouTube"]:hover,
+.social-row--mobile .social-icon[aria-label="YouTube"]:active{
+  background:linear-gradient(135deg, rgba(255,0,0,.18), rgba(255,0,0,.04));
+  border-color:rgba(255,0,0,.6);
 }
 
 /* Big prominent band (home page) */

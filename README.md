@@ -120,6 +120,38 @@ Privater Hetzner-Server
 **Produktions-Härtung (später):**
 In `site/config/config.php` `debug => false` setzen und `panel.install` entfernen, sobald der Admin-Account angelegt ist.
 
+## Inhalte im Panel pflegen
+
+Login: `http://<SERVER_IP>:8090/panel` (lokal: `http://localhost:8080/panel`).
+
+### Was du wo findest
+
+| Sektion | Seite im Panel |
+|---|---|
+| Hero-Headline, Sub, Animation | `Startseite` (Reiter "Hero") |
+| Testfahrt-Block | `Startseite` (Reiter "Lerne") |
+| Showroom-Text | `Startseite` (Reiter "Showroom") |
+| Innovation-Karten (4) | `Startseite` (Reiter "Innovation") |
+| Testimonials | `Startseite` (Reiter "Stimmen") |
+| Zahlen-Counter | `Startseite` (Reiter "Zahlen") |
+| Boards-Übersichtsseite | `Boards` |
+| Einzelnes Board (z.B. Boost Board) | `Boards → Boost Board` |
+| Stripe Payment Link pro Board | `Boards → [Board] → Shop & Stripe` |
+| Über-uns / Konfigurieren / Angler / B2B / Kontakt | gleichnamige Pages auf Top-Level |
+| Impressum / Datenschutz / AGB / Widerruf / Barrierefreiheit / Zahlungsarten | gleichnamige Pages |
+| Adresse, Telefon, Social-Profile global | `Settings` (Zahnrad rechts oben) → Site-Felder |
+
+### Schnellhilfe
+
+- **Bild ändern:** Zur Seite → Felder-Sektion → Bild rausziehen, neues drag-and-drop → Speichern
+- **Neues Produkt:** `Boards` → "+ Add" → Template `product` → Name vergeben → speichern → dann Felder ausfüllen
+- **Neuen Rechtstext:** Top-Level "+ Add" → Template `legal` → Headline + Text
+- **Social-Profil ändern:** `Settings` (Zahnrad) → Felder "Social Media" → URL pasten
+
+### Falls Pages nicht erscheinen
+
+War ein Bug — die `site.yml` hatte einen Template-Filter gesetzt, der Home, Angler, Konfigurieren und Checkout-Pages aus der Übersicht ausblendete. Seit Commit `XYZ` gefixt. Falls du älteren Stand auf dem Server hast: `docker compose pull && docker compose up -d` triggern.
+
 ## Shop (Stripe Payment Links)
 
 Die zwei Standard-Boards (Boost Board, Boost Chill) sind über **Stripe Payment Links** direkt verkaufbar. Kein Plugin, kein Cart-System — eine URL pro Produkt, fertig.

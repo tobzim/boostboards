@@ -217,77 +217,179 @@ section{ position:relative; padding:clamp(80px, 10vw, 140px) 0; }
 .local__meta > div{ display:flex; flex-direction:column; gap:6px; font-size:14.5px; }
 .local__label{ font-family:var(--font-display); font-size:11px; letter-spacing:.22em;
   text-transform:uppercase; color:var(--text-dim); }
-.local__map{
+/* ============ Showroom showcase (replaces the old HH map) ============ */
+.local__showcase{
   position:relative;
   aspect-ratio:5/4;
   border-radius:24px;
-  background:linear-gradient(180deg, #131520, #0a0c14);
+  overflow:hidden;
+  background:
+    radial-gradient(120% 80% at 50% 80%, rgba(0,46,80,.5), transparent 70%),
+    linear-gradient(180deg, #0c1422 0%, #060a13 60%, #04060c 100%);
   border:1px solid var(--line);
-  overflow:visible;
-  padding:18px;
-}
-.local__map-svg{
-  width:100%; height:100%;
-  display:block;
-  overflow:visible;
+  isolation:isolate;
 }
 
-/* Hamburg outline */
-.hh-outline{
-  fill:rgba(0,212,255,.05);
-  stroke:rgba(255,255,255,.22);
-  stroke-width:1.5;
-  stroke-linejoin:round;
-  filter:drop-shadow(0 0 24px rgba(0,212,255,.12));
-}
-
-/* Elbe + harbor inlet */
-.hh-river{
-  fill:none;
-  stroke:rgba(0,212,255,.45);
-  stroke-width:2.6;
-  stroke-linecap:round;
-  opacity:.9;
-}
-
-/* Außenalster (stylized) */
-.hh-lake{
-  fill:rgba(0,212,255,.22);
-  stroke:rgba(0,212,255,.45);
-  stroke-width:1;
-}
-
-/* Pin core */
-.hh-pin > circle:last-child{ filter:drop-shadow(0 0 6px #fff); }
-.hh-pin > circle:nth-last-child(2){ filter:drop-shadow(0 0 10px rgba(0,212,255,.7)); }
-
-/* Pin label overlay (HTML on top of SVG for crisp text) */
-.local__pin-label{
+/* Ambient water-glow background */
+.local__showcase-bg{
   position:absolute;
-  /* Pin sits at SVG (587,141) inside viewBox 800×560.
-     Add the .local__map padding (18px) — we anchor via percent of the
-     padded container, so the absolute % of x/y match the SVG coords. */
-  transform:translate(-50%, calc(-100% - 18px));
-  font-family:var(--font-display);
-  font-size:11px;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:#fff;
-  padding:6px 10px;
-  background:rgba(0,0,0,.55);
-  backdrop-filter:blur(6px);
-  -webkit-backdrop-filter:blur(6px);
-  border:1px solid var(--line-strong);
-  border-radius:6px;
-  white-space:nowrap;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+.local__showcase-blob{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(40px);
+  animation:blobDrift 18s ease-in-out infinite alternate;
+  will-change:transform;
+}
+.local__showcase-blob--1{
+  width:60%; height:60%;
+  left:-15%; top:-20%;
+  background:radial-gradient(circle, rgba(0,212,255,.32), transparent 65%);
+}
+.local__showcase-blob--2{
+  width:55%; height:55%;
+  right:-12%; bottom:-15%;
+  background:radial-gradient(circle, rgba(43,109,255,.30), transparent 65%);
+  animation-delay:-9s;
+  animation-duration:22s;
+}
+@keyframes blobDrift{
+  0%  { transform:translate(0,0) scale(1); }
+  100%{ transform:translate(40px,-30px) scale(1.18); }
+}
+.local__showcase-grid{
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(circle at 50% 60%, #000 30%, transparent 80%);
+  -webkit-mask-image:radial-gradient(circle at 50% 60%, #000 30%, transparent 80%);
+}
+/* Subtle "horizon" line — gives the illusion of water surface beneath the board */
+.local__showcase-horizon{
+  position:absolute;
+  left:0; right:0; bottom:38%;
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(0,212,255,.4) 30%, rgba(0,212,255,.4) 70%, transparent);
+  filter:blur(.4px);
+}
+
+/* The board itself — floats with a gentle rotation */
+.local__showcase-board{
+  position:absolute;
+  left:50%; top:38%;
+  width:74%; max-width:520px;
+  transform:translate(-50%, -50%);
+  z-index:2;
+  filter:drop-shadow(0 24px 36px rgba(0,0,0,.55)) drop-shadow(0 0 24px rgba(0,212,255,.15));
+  animation:boardFloat 6s ease-in-out infinite alternate;
+  will-change:transform;
+}
+@keyframes boardFloat{
+  0%  { transform:translate(-50%, calc(-50% - 8px)) rotate(-1.2deg); }
+  100%{ transform:translate(-50%, calc(-50% + 8px)) rotate(1.2deg); }
+}
+
+/* Mirrored reflection below the board */
+.local__showcase-reflection{
+  position:absolute;
+  left:50%; top:38%;
+  width:74%; max-width:520px;
+  transform:translate(-50%, 60%) scaleY(-1);
+  z-index:1;
+  opacity:.22;
+  filter:blur(6px);
+  -webkit-mask-image:linear-gradient(180deg, #000 0%, transparent 70%);
+          mask-image:linear-gradient(180deg, #000 0%, transparent 70%);
+  animation:boardFloat 6s ease-in-out infinite alternate;
+  animation-delay:-3s;
   pointer-events:none;
 }
-.local__pin-label::after{
-  content:"";
+
+/* Bottom-left "Showroom Volksdorf" chip — clickable into WhatsApp */
+.local__showcase-chip{
   position:absolute;
-  left:50%; bottom:-6px;
-  width:1px; height:14px;
-  background:rgba(255,255,255,.4);
+  left:22px; bottom:22px;
+  z-index:3;
+  display:inline-flex; align-items:center; gap:12px;
+  padding:14px 18px;
+  background:rgba(10,12,18,.7);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1px solid var(--line-strong);
+  border-radius:14px;
+  color:#fff;
+  transition:transform .35s var(--ease), border-color .35s var(--ease), background-color .35s var(--ease);
+}
+.local__showcase-chip:hover{
+  transform:translateY(-2px);
+  border-color:#fff;
+  background:rgba(10,12,18,.85);
+}
+.local__showcase-chip-dot{
+  width:8px; height:8px;
+  border-radius:50%;
+  background:#25d366;
+  box-shadow:0 0 0 4px rgba(37,211,102,.22);
+  animation:dotPulse 2.2s ease-in-out infinite;
+  flex-shrink:0;
+}
+@keyframes dotPulse{
+  0%,100%{ box-shadow:0 0 0 4px rgba(37,211,102,.22); }
+  50%    { box-shadow:0 0 0 9px rgba(37,211,102,.05); }
+}
+.local__showcase-chip-text{
+  display:flex; flex-direction:column;
+  gap:2px;
+  font-family:var(--font-display);
+  line-height:1.2;
+}
+.local__showcase-chip-text strong{
+  font-size:14px;
+  font-weight:600;
+  letter-spacing:.02em;
+}
+.local__showcase-chip-text small{
+  font-size:10.5px;
+  color:var(--text-mute);
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.local__showcase-chip-arrow{
+  font-size:18px;
+  color:var(--text-mute);
+  margin-left:4px;
+  transition:transform .3s var(--ease), color .3s var(--ease);
+}
+.local__showcase-chip:hover .local__showcase-chip-arrow{
+  transform:translateX(4px);
+  color:#fff;
+}
+
+/* Top-right coords tag — subtle but signals "this is a place" */
+.local__showcase-meta{
+  position:absolute;
+  right:22px; top:22px;
+  z-index:3;
+  display:flex; flex-direction:column;
+  gap:2px;
+  font-family:var(--font-display);
+  font-size:10.5px;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--text-mute);
+  text-align:right;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .local__showcase-board,
+  .local__showcase-reflection,
+  .local__showcase-blob,
+  .local__showcase-chip-dot{ animation:none; }
 }
 @media (max-width:860px){
   .local__inner{ grid-template-columns:1fr; }

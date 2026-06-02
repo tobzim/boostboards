@@ -81,83 +81,41 @@
         </div>
       </div>
     </div>
-    <div class="local__map" data-reveal>
-      <svg class="local__map-svg" viewBox="0 0 800 560" preserveAspectRatio="xMidYMid meet" aria-label="Karte von Hamburg mit Showroom-Standort Volksdorf">
-        <defs>
-          <pattern id="hh-grid" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,.05)" stroke-width="1"/>
-          </pattern>
-          <radialGradient id="hh-glow" cx="73%" cy="25%" r="55%">
-            <stop offset="0%" stop-color="rgba(0,212,255,.18)"/>
-            <stop offset="60%" stop-color="rgba(0,212,255,0)"/>
-          </radialGradient>
-        </defs>
+    <div class="local__showcase" data-reveal>
+      <div class="local__showcase-bg" aria-hidden="true">
+        <div class="local__showcase-blob local__showcase-blob--1"></div>
+        <div class="local__showcase-blob local__showcase-blob--2"></div>
+        <div class="local__showcase-grid"></div>
+        <div class="local__showcase-horizon"></div>
+      </div>
 
-        <rect width="800" height="560" fill="url(#hh-grid)"/>
-        <rect width="800" height="560" fill="url(#hh-glow)"/>
+      <img
+        class="local__showcase-board"
+        src="<?= url('assets/img/Volt-1000-freigestellt.webp') ?>"
+        alt="Boost Electric 1000 — vor Ort im Showroom Volksdorf"
+        loading="lazy" />
+      <img
+        class="local__showcase-reflection"
+        src="<?= url('assets/img/Volt-1000-freigestellt.webp') ?>"
+        alt="" aria-hidden="true" loading="lazy" />
 
-        <!-- Hamburg Stadtgrenze (stilisierte Silhouette) -->
-        <path class="hh-outline" d="
-          M 366 4
-          C 420 8, 470 12, 500 12
-          C 560 14, 600 28, 637 50
-          C 680 80, 710 100, 730 132
-          C 750 165, 765 195, 770 222
-          C 785 270, 795 320, 798 350
-          C 790 400, 760 448, 732 478
-          C 690 498, 640 508, 600 508
-          C 560 514, 510 525, 480 538
-          C 440 550, 410 555, 380 555
-          C 350 540, 320 520, 300 500
-          C 260 480, 230 470, 200 460
-          C 160 440, 130 420, 100 400
-          C 70 380, 30 360, 15 330
-          C 2 290, 2 260, 12 230
-          C 22 200, 35 170, 50 150
-          C 65 125, 85 100, 100 80
-          C 130 55, 170 40, 200 30
-          C 260 15, 320 8, 366 4 Z
-        "/>
+      <?php $wa = preg_replace('/[^0-9]/', '', (string) $site->social_whatsapp()); ?>
+      <a
+        href="<?= $wa ? 'https://wa.me/' . $wa . '?text=' . rawurlencode('Hi, ich würde gerne einen Showroom-Termin in Volksdorf vereinbaren.') : ('tel:' . str_replace([' ', '/'], '', $site->contact_phone())) ?>"
+        class="local__showcase-chip"
+        <?php if ($wa): ?>target="_blank" rel="noopener"<?php endif ?>>
+        <span class="local__showcase-chip-dot" aria-hidden="true"></span>
+        <span class="local__showcase-chip-text">
+          <strong>Showroom Volksdorf</strong>
+          <small>Termin per WhatsApp</small>
+        </span>
+        <span class="local__showcase-chip-arrow" aria-hidden="true">→</span>
+      </a>
 
-        <!-- Elbe -->
-        <path class="hh-river" d="
-          M 0 372
-          Q 100 392, 250 405
-          Q 380 415, 500 415
-          Q 620 415, 798 395
-        "/>
-
-        <!-- Hafenbucht (Sankt Pauli / Speicherstadt) -->
-        <path class="hh-river" d="
-          M 280 408
-          Q 320 430, 360 410
-        "/>
-
-        <!-- Alster -->
-        <path class="hh-lake" d="
-          M 322 150
-          C 308 148, 300 168, 304 188
-          C 308 208, 326 214, 340 208
-          C 354 200, 358 180, 350 162
-          C 344 152, 332 148, 322 150 Z
-        "/>
-
-        <!-- Pin: Volksdorf (53.6517°N, 10.1633°E) -->
-        <g class="hh-pin" transform="translate(587, 141)">
-          <circle r="6" fill="rgba(0,212,255,.10)">
-            <animate attributeName="r"       values="6;34;6" dur="2.6s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values=".8;0;.8" dur="2.6s" repeatCount="indefinite"/>
-          </circle>
-          <circle r="6" fill="rgba(0,212,255,.15)">
-            <animate attributeName="r"       values="6;22;6" dur="2.6s" begin="0.5s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values=".8;0;.8" dur="2.6s" begin="0.5s" repeatCount="indefinite"/>
-          </circle>
-          <circle r="9" fill="#00d4ff"/>
-          <circle r="3" fill="#fff"/>
-        </g>
-      </svg>
-
-      <span class="local__pin-label" style="left:73.4%; top:25.2%;">Showroom Volksdorf</span>
+      <span class="local__showcase-meta" aria-hidden="true">
+        <span>53.65° N</span>
+        <span>10.16° O</span>
+      </span>
     </div>
   </div>
 </section>

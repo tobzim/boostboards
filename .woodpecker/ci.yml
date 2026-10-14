@@ -1,0 +1,34 @@
+# Woodpecker-Pipeline fuer Kirby-Sites (kirby/ und vendor/ kommen per Composer)
+# Webroot: public/ falls vorhanden, sonst Repo-Wurzel
+when:
+  - event: [push, pull_request, manual]
+
+steps:
+  - name: composer
+    image: ci/php:8.3
+    commands:
+      - composer validate --no-check-publish --strict
+      - composer install --no-dev --no-interaction --prefer-dist --no-progress
+
+  - name: php-lint
+    image: ci/php:8.3
+    commands:
+      - find site $(test -d public && echo public) -name '*.php' -print0 | xargs -0 -r -n1 -P2 php -l 2>&1 | grep -v '^No syntax errors' > /tmp/lint.txt || true
+      - cat /tmp/lint.txt; test ! -s /tmp/lint.txt
+
+  - name: smoke-test
+    image: ci/php:8.3
+    commands:
+      - mkdir -p storage/accounts storage/cache storage/sessions
+      - DOCROOT=$(test -f public/index.php && echo public || echo .)
+      - php -S 127.0.0.1:8080 -t $DOCROOT kirby/router.php > /tmp/server.log 2>&1 &
+      - for i in $(seq 1 30); do curl -s -o /dev/null http://127.0.0.1:8080/ && break; sleep 1; done
+      - code=$(curl -sL -o /tmp/index.html -w '%{http_code}' http://127.0.0.1:8080/); echo "Startseite -> HTTP $code"; test "$code" = 200
+      - if grep -qiE 'Whoops|Fatal error|Uncaught' /tmp/index.html; then echo 'PHP-Fehler im HTML'; exit 1; fi
+
+  - name: docker-build
+    image: woodpeckerci/plugin-docker-buildx:6
+    settings:
+      dry_run: true
+      repo: ci-probe/build
+      platforms: linux/arm64

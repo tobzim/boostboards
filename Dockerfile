@@ -1,7 +1,8 @@
 # BoostBoards — Kirby CMS in Docker
 # PHP 8.3 + Apache, optimized for Kirby's flat-file CMS
 
-FROM php:8.3-apache
+# Pinned to patched release (php2shell, CVE-2026-109618/-109619); exact tag also busts the GHA layer cache
+FROM php:8.3.36-apache
 
 # ----- System dependencies for Kirby (image processing, intl, zip)
 RUN apt-get update && apt-get install -y --no-install-recommends \
